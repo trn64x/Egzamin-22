@@ -27,12 +27,11 @@
         function Select(){
 let items = document.getElementsByClassName("item");
 console.log(items[1])
-for(let i = 0; i < items.length - 1; i++){
-    if(items[i].innerHTML == 0){
-        items[i].style.background = "red";
-    }
+for(let i = 0; i < items.length; i++){
+    if(items[i].innerHTML == 0) items[i].style.background = "red";
+    
     if(items[i].innerHTML >= 1 && items[i].innerHTML <= 5) items[i].style.background = "yellow";
-    else items[i].style.background = "honeydew"
+    if(items[i].innerHTML > 5) items[i].style.background = "honeydew"
 }
         }
         Select();
