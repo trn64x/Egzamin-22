@@ -1,0 +1,7 @@
+kw1:SELECT materialy.nazwa, materialy.ilosc, producenci.nazwaProd from producenci,materialy where ilosc > 9 and materialy.Producenci_id = producenci.id;
+kw2:SELECT materialy.nazwa, producenci.nazwaProd, jednostki.nazwaJedn from materialy,producenci,jednostki WHERE materialy.Jednostki_id = jednostki.id AND materialy.Producenci_id = producenci.id;
+kw3:CREATE USER `zaopatrzenie`@`localhost` IDENTIFIED BY 'Z@op@trzenie';
+kw4:
+GRANT SELECT,INSERT,UPDATE,DELETE ON materialy TO 'zaopatrzenie';
+GRANT SELECT,INSERT,UPDATE,DELETE ON jednostki TO 'zaopatrzenie';
+GRANT SELECT,INSERT,UPDATE,DELETE ON producenci TO 'zaopatrzenie';

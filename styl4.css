@@ -1,0 +1,48 @@
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+header{
+    background-color: darkgreen;
+    color:white;
+    padding:5px;
+}
+aside{
+    float:left;
+    background-color: palegreen;
+    width: 30%;
+    height:600px
+}
+main{float: left;
+    background-color: honeydew;
+    width:70%;
+    height:500px;
+    padding-top:100px;
+}
+footer{
+    clear:both;
+    background-color: palegreen;
+    padding:3px;
+}
+table,td{
+    border:1px solid darkgreen;
+    border-collapse: collapse;
+}
+table{
+    width:95%;
+}
+td{
+    margin:auto;
+}
+td,th{
+    padding:20px 0 20px 0;
+}
+button{
+    background-color: darkgreen;
+    color:white;
+    padding:5px;
+}
+button:hover{
+    background:honeydew;
+    color:darkgreen;
+}

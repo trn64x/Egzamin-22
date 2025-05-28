@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamówienia hurtowe</title>
+    <link rel="stylesheet" href="styl4.css">
+</head>
+<body>
+    <header><h1>Sieci Komputerowe</h1></header>
+    <aside><h2>Aktualizacja i zamówienia materiałów</h2><p>Do wewnętrznego użytku firmy</p><img src="obraz.png" alt="sieć komputerowa"></aside>
+    <main>
+        <table>
+            <tr><th>Produkt</th> <th>Jednostka</th> <th>Dostępna ilość</th> <th>Aktualizacja</th> <th>Zamówienia</th> </tr>
+            <tr><td>Skrętka U/UTP drut</td><td>metr</td><td class="item" id="a0">20</td><td><button onclick="Update('a0')">Aktualizuj</button></td><td><button onclick="Buy('a0')">Zamów</button></td></tr>
+            <tr><td>Skrętka U/UTP linka</td><td>metr</td><td class="item" id="a1">2</td><td><button onclick="Update('a1')">Aktualizuj</button></td><td><button onclick="Buy('a1')">Zamów</button></td></tr>
+            <tr><td>Wtyki 8P8C</td><td>sztuki</td><td class="item" id="a2">10</td><td><button onclick="Update('a2')">Aktualizuj</button></td><td><button onclick="Buy('a2')">Zamów</button></td></tr>
+            <tr><td>Moduły Keystone</td><td>sztuki</td><td class="item" id="a3">30</td><td><button onclick="Update('a3')">Aktualizuj</button></td><td><button onclick="Buy('a3')">Zamów</button></td></tr>
+        </table>
+    </main>
+    <footer>
+        <a href="http://sieci.pl/" target="_blank">Nasza strona internetowa</a>
+        <p>Strone Przygotował: Maciej Potrz</p>
+    </footer>
+    <script>
+        let iterator = 0;
+        function Select(){
+let items = document.getElementsByClassName("item");
+console.log(items[1])
+for(let i = 0; i < items.length - 1; i++){
+    if(items[i].innerHTML == 0){
+        items[i].style.background = "red";
+    }
+    if(items[i].innerHTML >= 1 && items[i].innerHTML <= 5) items[i].style.background = "yellow";
+    else items[i].style.background = "honeydew"
+}
+        }
+        Select();
+function Update(id){
+    const element = document.getElementById(id);
+    const answer = prompt("Podaj nową ilość:", element.innerHTML);
+    element.innerHTML = answer;
+    Select();
+}
+function Buy(id){
+    iterator++;
+    const index = id.slice(1,2);
+    const Products = [
+    'Skrętka U/UTP drut',
+    'Skrętka U/UTP linka',
+    'Wtyki 8P8C',
+    'Moduły Keystone'
+    ];
+    alert(`zamówienie nr: ${iterator}. Produkt: ${Products[index]}`);
+}
+    </script>
+</body>
+</html>
